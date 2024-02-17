@@ -1,11 +1,10 @@
-import { Container } from "postcss";
 import React, { useEffect, useState } from "react";
 import Service from "./Service";
 
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("/public/services.json")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
@@ -17,7 +16,7 @@ const Services = () => {
   return (
     <div className="my-9">
       <div className="text-center w-1/2 mx-auto my-10 space-y-7">
-        <h1 className="text-[#ff3811] font-bold ">About Us</h1>
+        <h1 className="text-[#ff3811] font-bold ">Services</h1>
         <h1 className="text-5xl font-bold  ">Our Service Area</h1>
         <p className="font-thin ">
           the majority have suffered alteration in some form, by injected
@@ -26,7 +25,7 @@ const Services = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {services.map((service) => (
-          <Service service={service}></Service>
+          <Service key={service._id} service={service}></Service>
         ))}
       </div>
     </div>
