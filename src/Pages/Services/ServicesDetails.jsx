@@ -16,8 +16,11 @@ const ServicesDetails = () => {
           <h1 className="text-2xl font-bold ">{details.title}</h1>
           <p>{details.description}</p>
           <div className="grid gap-3 grid-cols-2">
-            {details.facility.map((facilits) => (
-              <div className=" bg-slate-200 p-4 space-y-3 rounded-xl border-t-2 border-rose-600">
+            {details.facility.map((facilits, idx) => (
+              <div
+                key={idx}
+                className=" bg-slate-200 p-4 space-y-3 rounded-xl border-t-2 border-rose-600"
+              >
                 <h1 className="text-2xl">{facilits.name}</h1>
                 <p className="font-thin">{facilits.details}</p>
               </div>

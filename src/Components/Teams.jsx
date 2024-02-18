@@ -18,12 +18,12 @@ const Teams = () => {
         </p>
       </div>
       <div className="md:flex md:gap-3">
-        <div className=" p-5 w-[364px] h-[487px] rounded bg-base-100 border">
+        <div className=" p-5 md:w-[364px] md:h-[487px] rounded bg-base-100 border">
           <figure>
             <img
               src={team1}
               //   alt={service.title}
-              className="w-[314px] h-[290px] rounded"
+              className="md:w-[314px] md:h-[290px] w-full rounded"
             />
           </figure>
           <div className="space-y-3 text-center">
@@ -46,12 +46,12 @@ const Teams = () => {
             </div>
           </div>
         </div>
-        <div className=" p-5 w-[364px] h-[487px] rounded bg-base-100 border">
+        <div className=" p-5 md:w-[364px] md:h-[487px] rounded bg-base-100 border">
           <figure>
             <img
               src={team2}
               //   alt={service.title}
-              className="w-[314px] h-[290px] rounded"
+              className="md:w-[314px] md:h-[290px] w-full rounded"
             />
           </figure>
           <div className="space-y-3 text-center">
@@ -74,12 +74,12 @@ const Teams = () => {
             </div>
           </div>
         </div>
-        <div className=" p-5 w-[364px] h-[487px] rounded bg-base-100 border">
+        <div className=" p-5 md:w-[364px] md:h-[487px] rounded bg-base-100 border">
           <figure>
             <img
               src={team3}
               //   alt={service.title}
-              className="w-[314px] h-[290px] rounded"
+              className="md:w-[314px] md:h-[290px] w-full rounded"
             />
           </figure>
           <div className="space-y-3 text-center">

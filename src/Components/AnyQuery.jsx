@@ -5,10 +5,13 @@ import { FaMapLocation } from "react-icons/fa6";
 
 const AnyQuery = () => {
   return (
-    <div className=" flex items-center justify-around bg-[#151515] md:h-[250px]">
+    <div
+      data-aos="fade-left"
+      className=" md:flex items-center justify-around bg-[#151515] md:h-[300px]"
+    >
       <div className="flex items-center space-x-3 justify-center text-white">
         <div className="h-8 text-3xl">
-          <TbCalendarTime />
+          <TbCalendarTime></TbCalendarTime>
         </div>
         <div>
           <p>We are open monday-friday</p>

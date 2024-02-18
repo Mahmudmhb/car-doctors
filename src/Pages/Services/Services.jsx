@@ -4,19 +4,23 @@ import Service from "./Service";
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch(
+      "https://y-p5bfrg1bs-mahmudul-hasans-projects-f649235f.vercel.app/services"
+    )
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
         // console.log(data);
       });
 
-    console.log(services);
+    // console.log(services);
   }, []);
   return (
-    <div className="my-9">
+    <div data-aos="fade-right" className="my-9">
       <div className="text-center w-1/2 mx-auto my-10 space-y-7">
-        <h1 className="text-[#ff3811] font-bold ">Services</h1>
+        <h1 data-aos="fade-up" className="text-[#ff3811] font-bold ">
+          Services
+        </h1>
         <h1 className="text-5xl font-bold  ">Our Service Area</h1>
         <p className="font-thin ">
           the majority have suffered alteration in some form, by injected

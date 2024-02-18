@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import logo from "../../assets/logo.svg";
+import { Link } from "react-router-dom";
 
 const ServiceSidber = () => {
   const [sidebar, setSidebar] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch(
+      "https://y-p5bfrg1bs-mahmudul-hasans-projects-f649235f.vercel.app/services"
+    )
       .then((res) => res.json())
       .then((data) => setSidebar(data));
   }, []);
@@ -17,9 +20,14 @@ const ServiceSidber = () => {
           <div key={side._id} className="m-2">
             <div className=" flex hover:bg-[#ff3811] rounded-lg hover:text-white items-center font-bold bg-white p-3 justify-between">
               <h1>{side.title}</h1>
-              <div className="text-[#ff3811 ">
-                <FaArrowRight />
-              </div>
+              <button>
+                <Link to={`/servicesdetails/${side._id}`}>
+                  {" "}
+                  <div className="text-[#ff3811 ">
+                    <FaArrowRight />
+                  </div>
+                </Link>
+              </button>
             </div>
           </div>
         ))}

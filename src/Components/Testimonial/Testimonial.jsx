@@ -12,7 +12,7 @@ const Testimonial = () => {
           humour, or randomised words which don't look even slightly believable.
         </p>
       </div>
-      <div className="flex gap-5">
+      <div className="md:flex md:gap-5">
         <div className="border p-10 rounded space-y-3">
           <div className="flex justify-between">
             <div className="flex gap-3 items-center">

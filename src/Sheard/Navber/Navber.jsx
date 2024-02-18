@@ -1,10 +1,12 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 
 import logo from "../../assets/logo.svg";
+import { authContext } from "../../Provider/AuthProvider";
 const Navber = () => {
+  const { user, HandleLogOut } = useContext(authContext);
   const nav = (
     <>
       <li>
@@ -19,9 +21,9 @@ const Navber = () => {
       <li>
         <NavLink to="/blog">Blog</NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink to="/contact">Contact</NavLink>
-      </li>
+      </li> */}
     </>
   );
   return (
@@ -57,11 +59,51 @@ const Navber = () => {
         <ul className="menu menu-horizontal px-1">{nav}</ul>
       </div>
       <div className="navbar-end space-x-4">
-        <HiOutlineShoppingBag className="text-2xl" />
+        {user?.email && (
+          <Link to="/cart">
+            {" "}
+            <HiOutlineShoppingBag className="text-2xl" />
+          </Link>
+        )}
 
         <CiSearch className="text-2xl" />
+        {user ? (
+          <>
+            <img
+              src={user.photoURL}
+              alt=""
+              className="h-14 w-14 rounded-full"
+            />
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} role="button" className="btn m-1">
+                Profile
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  {" "}
+                  <Link t>{user.displayName}</Link>
+                </li>
+                <li>
+                  {" "}
+                  <Link to="/cart">My Cart</Link>
+                </li>
+                <li>
+                  {" "}
+                  <button onClick={HandleLogOut}>LogOut</button>
+                </li>
+              </ul>
+            </div>
+          </>
+        ) : (
+          <>
+            <NavLink to="/login">Login</NavLink>
 
-        <button className="btn btn-outline btn-error">Appointment</button>
+            <button className="btn btn-outline btn-error">Appointment</button>
+          </>
+        )}
       </div>
     </div>
   );
