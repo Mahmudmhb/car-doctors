@@ -49,9 +49,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://y-p5bfrg1bs-mahmudul-hasans-projects-f649235f.vercel.app/services/${params.id}`
-          ),
+          fetch(`http://localhost:5000/services/${params.id}`),
       },
       {
         path: "/proced/:id",
@@ -61,9 +59,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://y-p5bfrg1bs-mahmudul-hasans-projects-f649235f.vercel.app/services/${params.id}`
-          ),
+          fetch(`http://localhost:5000/services/${params.id}`),
       },
       {
         path: "/signup",

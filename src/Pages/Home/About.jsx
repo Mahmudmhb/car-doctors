@@ -13,12 +13,12 @@ const About = () => {
           />
           <img
             src={parts}
-            className="h-[332px] border-8 rounded-lg  md:w-[327px] right-10 md:absolute -bottom-20"
+            className="md:h-[332px] border-8 rounded-lg w-full md:w-[327px] right-10 md:absolute -bottom-20"
           />
         </div>
-        <div className=" w-1/2 space-y-7">
+        <div className=" md:w-1/2 space-y-7">
           <h1 className="text-[#ff3811] font-bold">About Us</h1>
-          <h1 className="text-4xl font-bold w-7/12 ">
+          <h1 className="text-4xl font-bold md:w-7/12 ">
             We are qualified & of experience in this field
           </h1>
           <p className="font-thin w-4/5">

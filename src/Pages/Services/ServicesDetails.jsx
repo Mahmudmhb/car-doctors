@@ -9,13 +9,13 @@ const ServicesDetails = () => {
   return (
     <div>
       <ServiceBannar></ServiceBannar>
-      <div className="grid grid-cols-3 gap-5 my-10">
+      <div className="grid md:grid-cols-3 md:gap-5 my-10">
         <div className=" col-span-2 space-y-4">
           {/* <h1>this is details page</h1> */}
           <img src={details.img} alt="" className="w-full" />
           <h1 className="text-2xl font-bold ">{details.title}</h1>
           <p>{details.description}</p>
-          <div className="grid gap-3 grid-cols-2">
+          <div className="md:grid gap-3 md:grid-cols-2">
             {details.facility.map((facilits, idx) => (
               <div
                 key={idx}
@@ -27,7 +27,7 @@ const ServicesDetails = () => {
             ))}
           </div>
         </div>
-        <div>
+        <div className="w-full">
           <ServiceSidber></ServiceSidber>
           <h1 className="text-4xl font-bold py-5">Price: ${details.price}</h1>
 

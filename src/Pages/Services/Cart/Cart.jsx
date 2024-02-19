@@ -2,33 +2,33 @@ import React, { useContext, useEffect, useState } from "react";
 import bannar from "../../../assets/images/banner/4.jpg";
 import { authContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Cart = () => {
   const { user } = useContext(authContext);
   const [booking, setBooking] = useState([]);
   useEffect(() => {
-    fetch(
-      `https://y-p5bfrg1bs-mahmudul-hasans-projects-f649235f.vercel.app/checkout?email=${user.email}`
-    )
-      .then((res) => res.json())
+    axios
+      .get(`http://localhost:5000/checkout?email=${user.email}`, {
+        withCredentials: true,
+      })
+      // fetch()
+      // .then((res) => res.json())
       .then((data) => {
         // console.log(data);
-        setBooking(data);
+        setBooking(data.data);
       });
   }, []);
 
   const handleUpdate = (id) => {
     // console.log(id);
-    fetch(
-      `https://y-p5bfrg1bs-mahmudul-hasans-projects-f649235f.vercel.app/checkout/${id}`,
-      {
-        method: "PATCH",
-        headers: {
-          "content-type": "apllication/json",
-        },
-        body: JSON.stringify({ satus: "confrimed" }),
-      }
-    )
+    fetch(`http://localhost:5000/checkout/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "apllication/json",
+      },
+      body: JSON.stringify({ satus: "confrimed" }),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -46,12 +46,9 @@ const Cart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(
-          `https://y-p5bfrg1bs-mahmudul-hasans-projects-f649235f.vercel.app/checkout/${id}`,
-          {
-            method: "DELETE",
-          }
-        )
+        fetch(`http://localhost:5000/checkout/${id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

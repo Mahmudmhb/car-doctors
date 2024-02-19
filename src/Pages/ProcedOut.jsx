@@ -20,16 +20,13 @@ const ProcedOut = () => {
     const message = form.message.value;
     const order = { title, customar: name, price, email, message, date, img };
     console.log(order);
-    fetch(
-      "https://y-p5bfrg1bs-mahmudul-hasans-projects-f649235f.vercel.app/checkout",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(order),
-      }
-    )
+    fetch("http://localhost:5000/checkout", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

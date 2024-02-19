@@ -6,15 +6,13 @@ import { Link } from "react-router-dom";
 const ServiceSidber = () => {
   const [sidebar, setSidebar] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://y-p5bfrg1bs-mahmudul-hasans-projects-f649235f.vercel.app/services"
-    )
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setSidebar(data));
   }, []);
   return (
     <div>
-      <div className=" grid bg-slate-200 p-5">
+      <div className=" md:grid mx-auto bg-slate-200 p-5">
         <h1 className="text-2xl m-4 font-bold">Services</h1>
         {sidebar.map((side) => (
           <div key={side._id} className="m-2">
