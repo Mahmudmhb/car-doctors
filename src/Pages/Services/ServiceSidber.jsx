@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const ServiceSidber = () => {
   const [sidebar, setSidebar] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://car-doctors-server-pi.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setSidebar(data));
   }, []);

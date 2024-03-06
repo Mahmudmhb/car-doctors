@@ -20,7 +20,7 @@ const ProcedOut = () => {
     const message = form.message.value;
     const order = { title, customar: name, price, email, message, date, img };
     console.log(order);
-    fetch("http://localhost:5000/checkout", {
+    fetch("https://car-doctors-server-pi.vercel.app/checkout", {
       method: "POST",
       headers: {
         "content-type": "application/json",

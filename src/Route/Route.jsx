@@ -23,6 +23,8 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
+        loader: () =>
+          fetch("https://car-doctors-server-pi.vercel.app/services"),
       },
       {
         path: "/blog",
@@ -49,7 +51,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://car-doctors-server-pi.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/proced/:id",
@@ -59,7 +63,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://car-doctors-server-pi.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/signup",

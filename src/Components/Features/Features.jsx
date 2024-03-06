@@ -26,7 +26,11 @@ const Features = () => {
         <Marquee>
           <div className=" flex justify-between gap-5 ">
             <span className="hover:bg-[#ff3811] border hover:text-white rounded p-4">
-              <img className="h-[100px] w-full mx-auto" src={icon3} alt="" />
+              <img
+                className="md:h-[100px] w-full py-10 mx-auto"
+                src={icon3}
+                alt=""
+              />
               <h1 className="text-xl font-bold">Expert Team</h1>
             </span>
             <span className="hover:bg-[#ff3811] border hover:text-white rounded p-2">

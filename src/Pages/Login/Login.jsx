@@ -23,7 +23,9 @@ const Login = () => {
         const user = { email };
 
         axios
-          .post("http://localhost:5000/jwt", user, { withCredentials: true })
+          .post("https://car-doctors-server-pi.vercel.app/jwt", user, {
+            withCredentials: true,
+          })
           .then((res) => {
             console.log(res.data);
           });

@@ -9,9 +9,12 @@ const Cart = () => {
   const [booking, setBooking] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/checkout?email=${user.email}`, {
-        withCredentials: true,
-      })
+      .get(
+        `https://car-doctors-server-pi.vercel.app/checkout?email=${user.email}`,
+        {
+          withCredentials: true,
+        }
+      )
       // fetch()
       // .then((res) => res.json())
       .then((data) => {
@@ -22,7 +25,7 @@ const Cart = () => {
 
   const handleUpdate = (id) => {
     // console.log(id);
-    fetch(`http://localhost:5000/checkout/${id}`, {
+    fetch(`https://car-doctors-server-pi.vercel.app/checkout/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "apllication/json",
@@ -46,7 +49,7 @@ const Cart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/checkout/${id}`, {
+        fetch(`https://car-doctors-server-pi.vercel.app/checkout/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

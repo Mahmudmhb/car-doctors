@@ -3,6 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Service = ({ service }) => {
+  console.log(service);
   return (
     <div className=" p-5 md:w-[364px] md:h-[348px] rounded bg-base-100 border">
       <figure>
